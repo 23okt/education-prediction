@@ -114,7 +114,17 @@ Mayoritas mahasiswa tidak membutuhkan perlakuan khusus, namun segmen kecil tetap
 Model machine learning yang digunakan adalah Random Forest Classifier, dengan akurasi memuaskan pada data testing.
 
 ```
+Langkah menjalankan sistem prediksi di prediction.py:
+1. Buka terminal di IDE lalu lakukan pip install joblib serta pip install scikit-learn
+2. Buka file prediction.py di IDE yang anda gunakan
+3. Masukkan beberapa input secara manual
+4. Jalankan Kodenya
+5. Hasil prediksi akan tampil pada terminal IDE yang anda gunakan
 
+Langkah menjalankan sistem prediksi di streamlit website:
+1. Klik link berikut: https://education-prediction-website.streamlit.app/
+2. Lalu Masukkan beberapa input
+3. Hasil prediksi akan keluar sesuai dengan inputan
 ```
 
 ## Conclusion
