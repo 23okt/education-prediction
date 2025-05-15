@@ -13,9 +13,35 @@ Aplikasi ini memprediksi apakah seorang mahasiswa **berpotensi dropout** atau **
 # Memuat model
 model = joblib.load('model/random_forest_model.pkl')
 
-# Input data pengguna
+APPLICATION_MODES = {
+    1:  "1st phase - general contingent",
+    2:  "Ordinance No. 612/93",
+    5:  "1st phase - special contingent (Azores Island)",
+    7:  "Holders of other higher courses",
+    10: "Ordinance No. 854-B/99",
+    15: "International student (bachelor)",
+    16: "1st phase - special contingent (Madeira Island)",
+    17: "2nd phase - general contingent",
+    18: "3rd phase - general contingent",
+    26: "Ordinance No. 533-A/99, item b2) (Different Plan)",
+    27: "Ordinance No. 533-A/99, item b3 (Other Institution)",
+    39: "Over 23 years old",
+    42: "Transfer",
+    43: "Change of course",
+    44: "Technological specialization diploma holders",
+    51: "Change of institution/course",
+    53: "Short cycle diploma holders",
+    57: "Change of institution/course (International)",
+}
+
 st.header("📥 Masukkan Data Mahasiswa")
-application_mode = st.selectbox("Application Mode", [1, 5, 15, 16, 17])
+
+codes = list(APPLICATION_MODES.keys())
+selected_code = st.selectbox(
+    "Application Mode",
+    codes,
+    format_func=lambda x: f"{x} – {APPLICATION_MODES[x]}"
+)
 debtor = st.radio("Apakah Mahasiswa Memiliki Hutang?", [0, 1], format_func=lambda x: 'Tidak' if x == 0 else 'Ya')
 tuition_fees = st.radio("Apakah Biaya Kuliah Sudah Dibayar?", [1, 0], format_func=lambda x: 'Ya' if x == 1 else 'Tidak')
 special_needs = st.radio("Apakah Mahasiswa Memiliki Kebutuhan Khusus?", [0, 1], format_func=lambda x: 'Tidak' if x == 0 else 'Ya')
@@ -28,7 +54,7 @@ admission_grade = st.number_input("Nilai Saat Masuk", min_value=0.0, max_value=2
 
 # Menyusun data
 data_baru = pd.DataFrame({
-    'Application_mode': [application_mode],
+    'Application_mode': [APPLICATION_MODES[selected_code]],
     'Debtor': [debtor],
     'Tuition_fees_up_to_date': [tuition_fees],
     'Educational_special_needs': [special_needs],

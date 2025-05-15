@@ -62,52 +62,112 @@ sqlalchemy	2.0.29	Koneksi ke database SQL untuk integrasi data
 
 ## Business Dashboard
 
-Link Dashboard: https://drive.google.com/file/d/1iq_E8RB0h9EomLww8bC1Zv6DSBsXNPDw/view?usp=sharing
+Link Dashboard: https://drive.google.com/file/d/1AZpy3li5vMpuIEBPbgw7g57JGXjpdeke/view?usp=sharing
 
-📊 1. Distribusi Status Mahasiswa (Donut Chart)
-Menampilkan persentase status mahasiswa: Lulus (49.9%), Dropout (32.1%), dan Masih Aktif (17.9%).
+📊 1. Total Students (Number Card)
+Menampilkan total mahasiswa: 4.424.
+Insight: Ini adalah basis populasi yang menjadi acuan seluruh analisis.
 
-Insight: Tingginya angka dropout (32.1%) perlu mendapat perhatian serius. Bisa jadi terkait faktor internal kampus atau kondisi mahasiswa.
+📊 2. Total Dropout (Number Card)
+Menampilkan jumlah mahasiswa yang dropout: 1.421.
+Insight: Lebih dari seribu mahasiswa berhenti sebelum menyelesaikan studi—skala masalahnya cukup besar.
 
-💸 2. Distribusi Permasalahan Keuangan Mahasiswa
-67.8% mahasiswa tidak memiliki masalah keuangan, sementara 32.2% mengalami kendala finansial.
+📊 3. Percentage Dropout (Number Card)
+Menampilkan persentase mahasiswa yang dropout: 32,12 %.
+Insight: Sekitar sepertiga populasi mahasiswa berhenti kuliah, menandakan perlu upaya intervensi yang lebih intensif.
 
-Insight: Sepertiga dari total mahasiswa mengalami kendala keuangan, yang mungkin menjadi salah satu penyebab dropout tinggi.
+📊 4. Distribution Student Status (Donut Chart)
+Menampilkan proporsi status mahasiswa:
 
-🏠 3. Distribusi Mahasiswa Terlantar
-54.8% Mahasiswa terlantar (displaced), sedangkan 45.2% tidak.
+Graduate 49,9 %
 
-Insight: Mayoritas mahasiswa mengalami kondisi sosial yang tidak stabil. Hal ini bisa berdampak negatif pada capaian akademik dan retensi.
+Dropout  32,1 %
 
-🧠 4. Kebutuhan Perawatan Khusus
-Dari total 4,424 mahasiswa, hanya 1.15% yang membutuhkan perlakuan khusus, dan 98.85% tidak.
+Enrolled  17,9 %
 
-Insight: Meski minoritas, mahasiswa dengan kebutuhan khusus tetap memerlukan perhatian dan dukungan institusi.
+Insight: Meskipun hampir setengah mahasiswa berhasil lulus, tingginya porsi dropout (32,1 %) dan rendahnya porsi masih aktif (17,9 %) mengindikasikan ada tantangan baik di sisi dukungan akademik maupun non‑akademik.
 
-📈 5. Rata-rata Jumlah Mahasiswa per Program Studi (Bar Chart Horizontal)
-Program studi seperti Biofuel Production Technologies memiliki rata-rata sangat rendah (4 mahasiswa).
+📊 5. Dropout Student by Displaced (Bar Chart)
+Menampilkan jumlah siswa dropout berdasarkan apakah mereka tergolong displaced student:
 
-Sedangkan rata-rata tertinggi berasal dari kelompok “Other (7)” dengan 901.67 mahasiswa.
+No: 752
 
-Insight: Ada ketimpangan besar dalam distribusi mahasiswa antar program studi. Ini bisa menunjukkan ketidakseimbangan popularitas, kapasitas, atau daya saing antar prodi.
+Yes: 669
 
-👨‍🎓 6. Distribusi Mahasiswa Berdasarkan Program Studi
-Menampilkan jumlah lulusan, mahasiswa aktif, dan dropout pada masing-masing prodi.
+Insight: Tingkat dropout sedikit lebih tinggi pada yang tidak displaced, menandakan faktor non‑displacement (misalnya dukungan sosial atau akademik) mungkin lebih dominan.
 
-Contoh:
+📊 6. Dropout Rate by Tuition Fee (Donut Chart)
+Menampilkan persentase dropout berdasarkan status pembayaran biaya kuliah:
 
-Nursing: Tertinggi dalam jumlah lulusan (548) tapi juga tinggi dalam dropout (100).
+Belum Membayar: 78 %
 
-Social Service (Evening) dan Communication Design menunjukkan angka dropout yang relatif tinggi dibanding jumlah total.
+Sudah Membayar: 22 %
+(Total “111.3” menunjukkan rata‑rata persentase atau indeks yang diukur.)
 
-Insight: Beberapa program studi memiliki ketidakseimbangan dalam output pendidikan (lulus vs dropout), yang perlu dievaluasi dari segi kurikulum, beban studi, atau dukungan akademik.
+Insight: Sebagian besar dropout berasal dari mereka belum membayar—menguatkan hipotesis bahwa kendala finansial adalah pemicu utama.
 
-📌 Kesimpulan Umum (Business Insight)
-Dropout rate tinggi (32.1%) menjadi masalah utama, dan tampaknya terkait dengan faktor keuangan (32.2%) dan kondisi sosial (54.8% displaced).
+📊 7. Distribution Student Dropout by Debtor Status (Bar Chart)
+Menampilkan jumlah siswa dropout berdasarkan apakah mereka tercatat sebagai debtor:
 
-Distribusi mahasiswa tidak merata di antara prodi, mengindikasikan perlunya peninjauan strategi promosi dan kapasitas masing-masing program.
+No: 1.109
 
-Mayoritas mahasiswa tidak membutuhkan perlakuan khusus, namun segmen kecil tetap harus diperhatikan dengan pendekatan inklusif.
+Yes: 312
+
+Insight: Mahasiswa tanpa catatan debtor justru lebih banyak yang dropout, bisa jadi karena sistem tagihan yang terlalu kaku bagi yang berutang ringan, atau karena debtor mendapat perhatian khusus sehingga tingkat dropout lebih rendah.
+
+📊 8. Dropout Rate by Special Needs (Donut Chart)
+Menampilkan persentase dropout berdasarkan kebutuhan perlakuan khusus:
+
+Special Needs: 51 %
+
+No Special Needs: 49 %
+
+Insight: Angka hampir seimbang, tetapi sedikit lebih tinggi di kelompok special needs, menunjukkan diperlukan dukungan tambahan untuk mahasiswa berkebutuhan khusus.
+
+📊 9. Age At Enrollment by Student Status (Stacked Bar Chart)
+Menampilkan jumlah mahasiswa per rentang usia dan status (Dropout, Enrolled, Graduate):
+
+17–27: Dropout 944, Enrolled 684, Graduate 1.936
+
+28–38: Dropout 332, Enrolled 75, Graduate 167
+
+39–49: Dropout 114, Enrolled 31, Graduate 82
+
+50–60: Dropout 29, Enrolled 4, Graduate 23
+
+61–70: Dropout 2, Enrolled 1, Graduate 0
+
+Insight: Kelompok usia 17–27 mendominasi semua status—intervensi harus difokuskan.
+
+📊 11. Distribution of Students by Course (Clustered Bar Chart)
+Menampilkan jumlah Graduate (kuning), Enrolled (merah), dan Dropout (hijau) untuk setiap program studi.
+
+Top 3 program dengan angka dropout tertinggi:
+
+Veterinary Nursing: 75 mahasiswa
+
+Nursing: 100 mahasiswa
+
+Manajemen: 108 mahasiswa
+
+Insight: Program‑program besar seperti Veterinary Nursing dan Management mengalami beban dropout yang signifikan—mungkin karena kurikulum yang berat, beban praktikum/klinis, atau kurangnya dukungan akademik di bidang tersebut.
+
+🔑 Kesimpulan Keseluruhan & Rekomendasi Fokus ke Depan
+Faktor Utama Penyebab Dropout
+
+Kendala Finansial: 78 % dropout terjadi pada mahasiswa yang belum membayar biaya kuliah.
+
+Konsentrasi Usia Awal: Kelompok 17–27 tahun mendominasi angka dropout, menandakan fase adaptasi awal yang kritis.
+
+Program Studi Spesifik: Beberapa jurusan (Veterinary Nursing, Management) menunjukkan angka dropout jauh lebih tinggi dibanding rata‑rata.
+
+Apa yang Perlu Difokuskan
+
+Beasiswa & Skema Cicilan: Perkuat dukungan keuangan untuk mahasiswa berisiko gagal bayar.
+
+Program Onboarding & Mentoring: Buat program pendampingan khusus di 2 tahun pertama—khususnya untuk kelompok usia 17–27.
+
+Intervensi Berdasarkan Jurusan: Lakukan survei mendalam di Veterinary Nursing dan Management untuk identifikasi hambatan kurikulum atau fasilitas praktikum, lalu rancang solusi (misalnya tutor khusus, workshop keterampilan klinis).
 
 ## 🤖 Menjalankan Sistem Machine Learning
 
@@ -118,10 +178,19 @@ Langkah menjalankan sistem prediksi di prediction.py:
 1. Buka terminal di IDE lalu lakukan pip install joblib serta pip install scikit-learn
 2. Buka file prediction.py di IDE yang anda gunakan
 3. Masukkan beberapa input secara manual
-4. Jalankan Kodenya
+4. Jalankan Kodenya di terminal dengan python prediction.py
 5. Hasil prediksi akan tampil pada terminal IDE yang anda gunakan
 
-Langkah menjalankan sistem prediksi di streamlit website:
+Langkah menjalankan sistem prediksi streamlit lokal dengan file index.py:
+1. Lakukan pip install pipenv di command prompt
+2. Inisialisasi pipenv install
+3. Masuk ke environment Pipenv dengan pipenv shell
+4. Install Dependensi dengan pip install -r requirements.txt
+5. Jalankan Streamlit App (Local) dengan streamlit run index.py di terminal
+6. Masukkan beberapa input
+7. Hasil prediksi akan tampil
+
+Langkah menjalankan sistem prediksi di streamlit website (Deploy):
 1. Klik link berikut: https://education-prediction-website.streamlit.app/
 2. Lalu Masukkan beberapa input
 3. Hasil prediksi akan keluar sesuai dengan inputan
