@@ -58,6 +58,7 @@ seaborn	0.12.2	Visualisasi statistik dan heatmap
 scikit-learn	1.4.2	Pembuatan dan evaluasi model machine learning
 joblib	1.4.2	Menyimpan dan memuat model
 sqlalchemy	2.0.29	Koneksi ke database SQL untuk integrasi data
+streamlit 1.45.0 Untuk membuat website prediksi
 ```
 
 ## Business Dashboard

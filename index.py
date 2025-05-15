@@ -54,7 +54,7 @@ admission_grade = st.number_input("Nilai Saat Masuk", min_value=0.0, max_value=2
 
 # Menyusun data
 data_baru = pd.DataFrame({
-    'Application_mode': [APPLICATION_MODES[selected_code]],
+    'Application_mode': [selected_code],
     'Debtor': [debtor],
     'Tuition_fees_up_to_date': [tuition_fees],
     'Educational_special_needs': [special_needs],
